@@ -10,5 +10,10 @@
   <%= @task.content %>
 </p>
 
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @task.image.variant(resize_to_limit: [800, 800]) if @task.image.present? %>
+</p>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>
